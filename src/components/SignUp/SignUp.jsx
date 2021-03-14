@@ -11,9 +11,11 @@ import {
   TreeSelect,
   Switch,
 } from 'antd';
+import { useHistory } from "react-router-dom";
 
 const SignUp = () => {
   const [componentSize, setComponentSize] = useState('default');
+  const history = useHistory();
 
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
@@ -92,7 +94,7 @@ const SignUp = () => {
           <Switch />
         </Form.Item>
         <Form.Item label="Button">
-          <Button>Button</Button>
+          <Button onClick={() => history.push('/')}>signin</Button>
         </Form.Item>
       </Form>
     </>
